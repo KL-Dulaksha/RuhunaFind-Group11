@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RuhunaFind â€” Lost &amp; found for the University of Ruhuna</title>
+  <meta name="description" content="Search what's been found on campus, or report something you've lost. RuhunaFind is a student-built lost-and-found board for the University of Ruhuna.">
+  <meta name="theme-color" content="#f5f2ea">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RuhunaFind">
+  <meta property="og:title" content="RuhunaFind â€” Lost &amp; found for the University of Ruhuna">
+  <meta property="og:description" content="Search what's been found on campus, or report something you've lost. RuhunaFind is a student-built lost-and-found board for the University of Ruhuna.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body data-page="home">
+
+  <header class="site-header" data-nav="home">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="wrap nav">
+      <a class="nav__logo" href="index.html" aria-label="RuhunaFind home">
+        <img src="images/logo.png" alt="RuhunaFind" width="141" height="34">
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="browse.html">Browse items</a></li>
+          <li><a href="report.html">Report item</a></li>
+          <li><a href="contact.html">Contact &amp; Guide</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="report.html">
+          <svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg> Report an item
+        </a>
+      </nav>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">University of Ruhuna Â· Lost &amp; found</p>
+          <h1>Somebody on campus has probably <span class="hl">found it.</span></h1>
+          <p class="lead">RuhunaFind is the shared lost-and-found board for students and staff. Search whatâ€™s been handed in, or post what youâ€™ve lost so it can find its way back.</p>
+
+          <form class="search" action="browse.html" method="get" role="search">
+            <label class="search__field">
+              <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+              <span class="visually-hidden">Search lost and found items</span>
+              <input type="search" name="q" placeholder="Wallet, ID card, headphones, Libraryâ€¦" autocomplete="off">
+            </label>
+            <button class="btn btn--primary" type="submit">Search</button>
+          </form>
+
+          <p class="hero__try mono">
+            <span>Popular:</span>
+            <a href="browse.html?q=wallet">wallet</a>
+            <a href="browse.html?q=ID%20card">ID card</a>
+            <a href="browse.html?q=backpack">backpack</a>
+            <a href="browse.html?q=headphones">headphones</a>
+          </p>
+
+          <div class="hero__actions">
+            <a class="text-link" href="report.html?type=lost">I lost something <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-link" href="report.html?type=found">I found something <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero__stack" id="hero-stack">
+          <p class="hero__caption mono caps" id="hero-caption"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campus strip + stats -->
+    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+    <section class="stats" aria-label="Board at a glance">
+      <div class="wrap">
+        <dl class="stats__grid">
+          <div class="stat reveal"><dt>Items on the board</dt><dd data-stat="total">0</dd></div>
+          <div class="stat reveal" style="--d:.08s"><dt>Still lost</dt><dd data-stat="lost">0</dd></div>
+          <div class="stat reveal" style="--d:.16s"><dt>Found &amp; waiting</dt><dd data-stat="found">0</dd></div>
+          <div class="stat reveal" style="--d:.24s"><dt>Campus spots covered</dt><dd data-stat="spots">0</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Recently reported -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Latest reports</p>
+            <h2>Recently reported</h2>
+            <p>The newest lost and found items from across campus.</p>
+          </div>
+          <a class="text-link" href="browse.html"><span>View all <span id="all-count">9</span> items</span> <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="ticket-grid" id="recent">
+          <noscript><p>Turn on JavaScript to see the latest items, or <a href="browse.html">open the full list</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Categories</p>
+            <h2>Browse by category</h2>
+            <p>Know what youâ€™re looking for? Start with the kind of item.</p>
+          </div>
+        </div>
+        <ul class="catlist" id="catlist"></ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section band-dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">How it works</p>
+            <h2>Three steps from lost to returned.</h2>
+          </div>
+          <a class="text-link" href="contact.html#guide">The full walkthrough <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ol class="steps3" role="list">
+          <li class="step3">
+            <p class="step3__num mono caps">Step 01</p>
+            <h3>Search the listings</h3>
+            <p>Look through recent campus reports. Someone may have already found your item and listed it.</p>
+          </li>
+          <li class="step3">
+            <p class="step3__num mono caps">Step 02</p>
+            <h3>Post a report</h3>
+            <p>Canâ€™t find it? Post a short report with a description, the date and the place it was lost or found.</p>
+          </li>
+          <li class="step3">
+            <p class="step3__num mono caps">Step 03</p>
+            <h3>Reconnect safely</h3>
+            <p>Get in touch by university email and arrange a handover somewhere busy on campus.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="section band-cta">
+      <div class="wrap band-cta__grid">
+        <div>
+          <h2>Found something? Post it before someone starts searching.</h2>
+          <p>It takes about a minute, and you donâ€™t need an account.</p>
+        </div>
+        <div class="band-cta__actions">
+          <a class="btn btn--ink" href="report.html?type=found">Report a found item <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn" href="report.html?type=lost">Report a lost item</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/logo-white.png" alt="RuhunaFind" width="146" height="36">
+          <p>A lost-and-found board for the University of Ruhuna. Built by five Computer Science students as a group project.</p>
+        </div>
+        <div class="footer__col">
+          <h2>Navigate</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse items</a></li>
+            <li><a href="report.html">Report an item</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2>Help &amp; Guide</h2>
+          <ul>
+            <li><a href="contact.html#guide">How it works</a></li>
+            <li><a href="contact.html#rules">Safety rules</a></li>
+            <li><a href="contact.html#faq">FAQs</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__mark" aria-hidden="true">RuhunaFind</div>
+      <div class="footer__bottom mono">
+        <span>&copy; 2026 RuhunaFind</span>
+        <span>University of Ruhuna student project</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
