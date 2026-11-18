@@ -77,3 +77,37 @@
 .form-status[hidden] {
   display: none;
 }
+
+
+/* 02 - How It Works: 4-Step Process Walkthrough */
+.rows {
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 1rem clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-top: 1.5px solid var(--ink);
+}
+
+.row__num {
+  font-family: var(--f-mono);
+  font-size: 0.85rem;
+  color: var(--orange-deep);
+  padding-top: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.row h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.row p {
+  color: var(--ink-2);
+  font-size: 1.05rem;
+  padding-top: 0.35rem;
+  text-wrap: pretty;
+}
