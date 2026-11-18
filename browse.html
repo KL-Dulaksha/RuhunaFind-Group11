@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse lost &amp; found items - RuhunaFind</title>
+  <meta name="description" content="Search and filter items reported lost or found across the University of Ruhuna campus.">
+  <meta name="theme-color" content="#f5f2ea">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RuhunaFind">
+  <meta property="og:title" content="Browse lost &amp; found items - RuhunaFind">
+  <meta property="og:description" content="Search and filter items reported lost or found across the University of Ruhuna campus.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/browse.css">
+</head>
+<body data-page="browse">
+
+  <header class="site-header" data-nav="browse">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="wrap nav">
+      <a class="nav__logo" href="index.html" aria-label="RuhunaFind home">
+        <img src="images/logo.png" alt="RuhunaFind" width="141" height="34">
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html" aria-current="page">Browse items</a></li>
+          <li><a href="report.html">Report item</a></li>
+          <li><a href="contact.html">Contact &amp; Guide</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="report.html">
+          <svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg> Report an item
+        </a>
+      </nav>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="crumbs mono caps"><a href="index.html">Home</a><span>/</span><span>Browse</span></p>
+        <div class="page-head__row">
+          <div>
+            <h1>Browse lost &amp; found</h1>
+            <p class="lead">Search and filter items reported across campus buildings and grounds.</p>
+          </div>
+          <p class="mono caps" id="total" style="color:var(--ink-3)"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/logo-white.png" alt="RuhunaFind" width="146" height="36">
+          <p>A lost-and-found board for the University of Ruhuna. Built by five Computer Science students as a group project.</p>
+        </div>
+        <div class="footer__col">
+          <h2>Navigate</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse items</a></li>
+            <li><a href="report.html">Report an item</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2>Help &amp; Guide</h2>
+          <ul>
+            <li><a href="contact.html#guide">How it works</a></li>
+            <li><a href="contact.html#rules">Safety rules</a></li>
+            <li><a href="contact.html#faq">FAQs</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__mark" aria-hidden="true">RuhunaFind</div>
+      <div class="footer__bottom mono">
+        <span>&copy; 2026 RuhunaFind</span>
+        <span>University of Ruhuna student project</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

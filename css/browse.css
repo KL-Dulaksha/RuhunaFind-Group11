@@ -1,0 +1,10 @@
+/* ==========================================================================
+   RuhunaFind - Browse Page Stylesheet (css/browse.css)
+   Owned by: Member 2 (S.D. Liyanapathirana)
+   Scope: Search filters, segmented status toggle, results bar, empty state.
+   ========================================================================== */
+
+/* 01 - Results Container */
+.results {
+  padding-block: 2rem clamp(3.5rem, 7vw, 6rem);
+}
