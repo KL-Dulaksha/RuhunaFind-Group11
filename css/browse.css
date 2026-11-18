@@ -8,3 +8,77 @@
 .results {
   padding-block: 2rem clamp(3.5rem, 7vw, 6rem);
 }
+/* 02 - Filter Bar Container */
+.filters {
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+}
+
+.filters__row {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  padding: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filters__row + .filters__row {
+  border-top: 1px solid var(--line);
+  align-items: flex-end;
+  background: #fbfaf6;
+  border-radius: 0 0 3px 3px;
+  padding: 0.85rem 0.75rem;
+}
+
+.filters .search-box {
+  flex: 1 1 18rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-inline: 0.9rem;
+  border-radius: 3px;
+  background: var(--paper);
+  min-height: 3rem;
+}
+
+.filters .search-box:focus-within {
+  box-shadow: 0 0 0 2px var(--orange);
+}
+
+.search-box .i {
+  color: var(--ink-3);
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  outline: none;
+  padding-block: 0.7rem;
+}
+
+.search-box input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.filters .field {
+  flex: 1 1 11rem;
+  max-width: 16rem;
+}
+
+.filters__clear {
+  margin-left: auto;
+  background: none;
+  border: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  padding: 0.7rem 0.25rem;
+}
+
+.filters__clear:hover {
+  color: var(--orange-deep);
+}

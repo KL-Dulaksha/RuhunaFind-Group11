@@ -55,6 +55,35 @@
         </div>
       </div>
     </section>
+        <section class="wrap" style="padding-top:2rem">
+      <div class="filters">
+        <div class="filters__row">
+          <label class="search-box">
+            <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+            <span class="visually-hidden">Search items</span>
+            <input type="search" id="f-q" placeholder="Search by item, keyword or place..." autocomplete="off">
+          </label>
+        </div>
+        <div class="filters__row">
+          <div class="field">
+            <label for="f-category">Category</label>
+            <select class="select" id="f-category"></select>
+          </div>
+          <div class="field">
+            <label for="f-location">Location</label>
+            <select class="select" id="f-location"></select>
+          </div>
+          <div class="field">
+            <label for="f-sort">Sort by</label>
+            <select class="select" id="f-sort">
+              <option value="recent">Most recent</option>
+              <option value="oldest">Oldest first</option>
+            </select>
+          </div>
+          <button type="button" class="filters__clear" id="f-clear" hidden>Clear all filters</button>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
