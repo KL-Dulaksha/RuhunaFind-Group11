@@ -1,0 +1,24 @@
+/* ==========================================================================
+   RuhunaFind - Item Details & Claim Stylesheet (css/details.css)
+   Owned by: Member 4 (H.A.S. Gunathilaka)
+   Scope: Full item showcase card, facts grid, claim actions, safety checklist.
+   ========================================================================== */
+
+/* 01 - Details Page Container & Card */
+.details-section {
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(3.5rem, 7vw, 6rem);
+}
+
+.detail-card {
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 16px 36px -20px rgba(28, 25, 23, 0.25);
+}
+
+.detail__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  min-height: 32rem;
+}
