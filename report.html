@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report an item - RuhunaFind</title>
+  <meta name="description" content="Report a lost or found item on the University of Ruhuna campus.">
+  <meta name="theme-color" content="#f5f2ea">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RuhunaFind">
+  <meta property="og:title" content="Report an item - RuhunaFind">
+  <meta property="og:description" content="Report a lost or found item on the University of Ruhuna campus.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/report.css">
+</head>
+<body data-page="report">
+
+  <header class="site-header" data-nav="report">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="wrap nav">
+      <a class="nav__logo" href="index.html" aria-label="RuhunaFind home">
+        <img src="images/logo.png" alt="RuhunaFind" width="141" height="34">
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html">Browse items</a></li>
+          <li><a href="report.html" aria-current="page">Report item</a></li>
+          <li><a href="contact.html">Contact &amp; Guide</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="report.html">
+          <svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg> Report an item
+        </a>
+      </nav>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <section class="page-head" id="report-intro">
+      <div class="wrap">
+        <p class="crumbs mono caps"><a href="index.html">Home</a><span>/</span><span>Report an item</span></p>
+        <h1>Report an item</h1>
+        <p class="lead">Fill in the details below to post a lost or found item to the board.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="report">
+        <aside class="report__aside" aria-label="Tips for a good report">
+          <h2>A good report gets the item home</h2>
+          <ol class="tips" role="list">
+            <li><div><strong>Say what makes it yours</strong>Colour, brand, stickers, scratches, what's inside.</div></li>
+            <li><div><strong>Be exact about the place</strong>Pick the closest location and mention the room or bench.</div></li>
+            <li><div><strong>Add a photo if you have one</strong>Listings with a picture are easier to recognise.</div></li>
+          </ol>
+          <p class="aside-note">Never put PINs, passwords, card numbers or ID numbers in a public description. Keep one detail back so the real owner can prove it's theirs.</p>
+        </aside>
+
+        <div>
+          <form class="form" id="report-form" novalidate>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/logo-white.png" alt="RuhunaFind" width="146" height="36">
+          <p>A lost-and-found board for the University of Ruhuna. Built by five Computer Science students as a group project.</p>
+        </div>
+        <div class="footer__col">
+          <h2>Navigate</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse items</a></li>
+            <li><a href="report.html">Report an item</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2>Help &amp; Guide</h2>
+          <ul>
+            <li><a href="contact.html#guide">How it works</a></li>
+            <li><a href="contact.html#rules">Safety rules</a></li>
+            <li><a href="contact.html#faq">FAQs</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__mark" aria-hidden="true">RuhunaFind</div>
+      <div class="footer__bottom mono">
+        <span>&copy; 2026 RuhunaFind</span>
+        <span>University of Ruhuna student project</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

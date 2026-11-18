@@ -1,0 +1,64 @@
+/* ==========================================================================
+   RuhunaFind - Report Page Stylesheet (css/report.css)
+   Owned by: Member 3 (M.T.N. Wijerathna)
+   Scope: 2-column report layout, aside tips, fieldsets, choices, photo upload, confirmation.
+   ========================================================================== */
+
+/* 01 - Page Layout Grid */
+.report {
+  display: grid;
+  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem) clamp(4rem, 8vw, 7rem);
+  align-items: start;
+}
+
+/* 02 - Aside Guidance & Tips */
+.report__aside {
+  position: sticky;
+  top: calc(var(--header-h) + 1.5rem);
+  display: grid;
+  gap: 1.75rem;
+}
+
+.report__aside h2 {
+  font-size: 1.5rem;
+}
+
+.tips {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.1rem;
+  counter-reset: tip;
+}
+
+.tips li {
+  counter-increment: tip;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.5rem;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+.tips li::before {
+  content: "0" counter(tip);
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--orange-deep);
+  padding-top: 0.2rem;
+}
+
+.tips strong {
+  color: var(--ink);
+  display: block;
+}
+
+.aside-note {
+  padding: 1rem 1.1rem;
+  background: var(--paper-2);
+  border-left: 3px solid var(--orange);
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
