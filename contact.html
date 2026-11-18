@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; Campus Guide - RuhunaFind</title>
+  <meta name="description" content="Questions, feedback, or need help? Reach out to the RuhunaFind team and review our campus lost-and-found guide.">
+  <meta name="theme-color" content="#f5f2ea">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RuhunaFind">
+  <meta property="og:title" content="Contact &amp; Campus Guide - RuhunaFind">
+  <meta property="og:description" content="Questions, feedback, or need help? Reach out to the RuhunaFind team and review our campus lost-and-found guide.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body data-page="contact">
+
+  <header class="site-header" data-nav="contact">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="wrap nav">
+      <a class="nav__logo" href="index.html" aria-label="RuhunaFind home">
+        <img src="images/logo.png" alt="RuhunaFind" width="141" height="34">
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html">Browse items</a></li>
+          <li><a href="report.html">Report item</a></li>
+          <li><a href="contact.html" aria-current="page">Contact &amp; Guide</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="report.html">
+          <svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg> Report an item
+        </a>
+      </nav>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="crumbs mono caps"><a href="index.html">Home</a><span>/</span><span>Contact &amp; Guide</span></p>
+        <h1>Contact &amp; Campus Guide</h1>
+        <p class="lead">Have a question or feedback about RuhunaFind? Reach out to our student project team or review safe campus recovery procedures.</p>
+      </div>
+    </section>
+
+    <!-- Primary Contact Section -->
+    <div class="wrap contact">
+      <div class="contact__info">
+        <div class="contact__item">
+          <span class="mono caps">Project team email</span>
+          <a href="mailto:ruhunafind-team@university.edu">ruhunafind-team@university.edu</a>
+        </div>
+        <div class="contact__item">
+          <span class="mono caps">Campus location</span>
+          <p>Computer Science Lab, Building 4</p>
+        </div>
+        <div class="contact__item">
+          <span class="mono caps">Campus Security</span>
+          <p>Ext 4400</p>
+          <small>24/7 security desk. For high-value lost items or emergencies, call immediately.</small>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contact-form">
+        <div>
+          <h2>Send a message</h2>
+          <p class="hint" style="margin-top:.5rem">Fill out this quick form and our team will get back to your university inbox.</p>
+        </div>
+        <div class="field">
+          <label for="fullname">Your name <span class="req">*</span></label>
+          <input class="input" type="text" id="fullname" name="fullname" placeholder="Enter your full name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="email">University email <span class="req">*</span></label>
+          <input class="input" type="email" id="email" name="email" placeholder="student@university.edu" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input class="input" type="text" id="subject" name="subject" placeholder="What is this regarding?">
+        </div>
+        <div class="field">
+          <label for="message">Message <span class="req">*</span></label>
+          <textarea class="textarea" id="message" name="message" placeholder="Type your message here..." required></textarea>
+        </div>
+        <div>
+          <button class="btn btn--primary" type="submit">Send message <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+        <p class="form-status" id="contact-status" role="status" hidden></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/logo-white.png" alt="RuhunaFind" width="146" height="36">
+          <p>A lost-and-found board for the University of Ruhuna. Built by five Computer Science students as a group project.</p>
+        </div>
+        <div class="footer__col">
+          <h2>Navigate</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse items</a></li>
+            <li><a href="report.html">Report an item</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2>Help &amp; Guide</h2>
+          <ul>
+            <li><a href="contact.html#guide">How it works</a></li>
+            <li><a href="contact.html#rules">Safety rules</a></li>
+            <li><a href="contact.html#faq">FAQs</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__mark" aria-hidden="true">RuhunaFind</div>
+      <div class="footer__bottom mono">
+        <span>&copy; 2026 RuhunaFind</span>
+        <span>University of Ruhuna student project</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

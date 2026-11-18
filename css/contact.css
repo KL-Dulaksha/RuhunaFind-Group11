@@ -1,0 +1,79 @@
+/* ==========================================================================
+   RuhunaFind - Contact / How It Works Stylesheet (css/contact.css)
+   Owned by: Member 5 (M.M.N.V. Moradeniya)
+   Scope: Contact channels & form, 4-step walkthrough, campus rules, hotline alert, FAQ.
+   ========================================================================== */
+
+/* 01 - Contact Section Layout */
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem) clamp(3.5rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.contact__info {
+  display: grid;
+  border-top: 1.5px solid var(--ink);
+}
+
+.contact__item {
+  display: grid;
+  gap: 0.35rem;
+  padding-block: 1.4rem;
+  border-bottom: 1px solid var(--line-2);
+}
+
+.contact__item .mono {
+  color: var(--ink-3);
+}
+
+.contact__item a,
+.contact__item p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-stretch: 106%;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+}
+
+.contact__item a {
+  text-decoration-color: var(--orange);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+.contact__item a:hover {
+  color: var(--orange-deep);
+}
+
+.contact__item small {
+  color: var(--ink-3);
+  font-size: 0.9rem;
+}
+
+.contact__form {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+}
+
+.contact__form h2 {
+  font-size: 1.6rem;
+}
+
+.form-status {
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid var(--green);
+  background: #eef6f1;
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+
+.form-status[hidden] {
+  display: none;
+}
