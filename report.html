@@ -65,6 +65,46 @@
 
         <div>
           <form class="form" id="report-form" novalidate>
+             <fieldset class="fsec">
+              <div class="fsec__head"><span class="mono">01</span><h2>What would you like to report?</h2></div>
+              <div class="choices" role="radiogroup">
+                <label class="choice">
+                  <input type="radio" name="type" value="lost">
+                  <span class="choice__body"><strong>Lost item</strong><span>I've misplaced something.</span></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="type" value="found">
+                  <span class="choice__body"><strong>Found item</strong><span>I found something on campus.</span></span>
+                </label>
+              </div>
+              <p class="field__err" id="err-type" role="alert"></p>
+            </fieldset>
+
+            <fieldset class="fsec">
+              <div class="fsec__head"><span class="mono">02</span><h2>The item</h2></div>
+              <div class="fgrid">
+                <div class="field span-2">
+                  <label for="title">Item name <span class="req">*</span></label>
+                  <input class="input" id="title" name="title" type="text" placeholder="e.g. Blue Hydro Flask water bottle" maxlength="80" autocomplete="off">
+                  <p class="field__err" id="err-title" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="category">Category <span class="req">*</span></label>
+                  <select class="select" id="category" name="category"></select>
+                  <p class="field__err" id="err-category" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="date">Date lost or found <span class="req">*</span></label>
+                  <input class="input" id="date" name="date" type="date">
+                  <p class="field__err" id="err-date" role="alert"></p>
+                </div>
+                <div class="field span-2">
+                  <label for="location">Campus location <span class="req">*</span></label>
+                  <select class="select" id="location" name="location"></select>
+                  <p class="field__err" id="err-location" role="alert"></p>
+                </div>
+              </div>
+            </fieldset>
           </form>
         </div>
       </div>
