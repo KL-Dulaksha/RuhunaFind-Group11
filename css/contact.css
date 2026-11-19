@@ -111,3 +111,134 @@
   padding-top: 0.35rem;
   text-wrap: pretty;
 }
+
+
+/* 03 - Campus Handover Safety Rules */
+.rules {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.rule {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-right: 1px solid var(--line-2);
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.rule:last-child {
+  border-right: 0;
+}
+
+.rule .mono {
+  color: var(--orange-deep);
+}
+
+.rule h3 {
+  font-size: 1.4rem;
+  font-stretch: 110%;
+}
+
+.rule p {
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
+/* 04 - Campus Security Emergency Banner */
+.alert {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+}
+
+.alert .i {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--orange);
+}
+
+.alert strong {
+  display: block;
+  font-size: 1.1rem;
+  font-stretch: 108%;
+}
+
+.alert span {
+  color: #cfc8ba;
+  font-size: 0.95rem;
+}
+
+.alert .mono {
+  font-size: 1rem;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+/* 05 - Frequently Asked Questions Accordion */
+.faq {
+  border-top: 1.5px solid var(--ink);
+  max-width: 52rem;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--line-2);
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  padding-block: 1.35rem;
+  font-size: 1.15rem;
+  font-weight: 650;
+  font-stretch: 104%;
+  letter-spacing: -0.01em;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "";
+  flex: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--ink), var(--ink)) center / 10px 1.5px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) center / 1.5px 10px no-repeat;
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.faq summary:hover {
+  color: var(--orange-deep);
+}
+
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+
+.faq details > p {
+  padding: 0 3.5rem 1.5rem 0;
+  color: var(--ink-2);
+  max-width: 42rem;
+  text-wrap: pretty;
+}
