@@ -166,3 +166,24 @@
   color: var(--ink-3);
   stroke-width: 1.4;
 }
+/* 06 - Responsive Breakpoints */
+@media (max-width: 640px) {
+  .filters .field {
+    max-width: none;
+    flex: 1 1 100%;
+  }
+
+  .filters__clear {
+    margin-left: 0;
+  }
+
+  .seg {
+    width: 100%;
+  }
+
+  .seg button {
+    flex: 1;
+    justify-content: center;
+    padding-inline: 0.5rem;
+  }
+}
