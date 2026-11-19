@@ -105,7 +105,64 @@
                 </div>
               </div>
             </fieldset>
+              <fieldset class="fsec">
+              <div class="fsec__head"><span class="mono">03</span><h2>Details</h2></div>
+              <div class="field">
+                <label for="desc">Description <span class="req">*</span></label>
+                <textarea class="textarea" id="desc" name="desc" placeholder="Describe the colour, brand, stickers, scratches or other distinguishing features..." maxlength="600"></textarea>
+                <p class="field__err" id="err-desc" role="alert"></p>
+              </div>
+              <div class="field">
+                <span class="label">Photograph <span class="hint">(optional)</span></span>
+                <div class="upload" id="upload">
+                  <input type="file" id="photo" name="photo" accept="image/*" aria-label="Upload a photograph of the item">
+                  <strong><svg class="i" aria-hidden="true"><use href="#i-upload"/></svg> Choose a photo</strong>
+                  <span class="hint" id="upload-name">JPG or PNG. It's resized automatically.</span>
+                  <img class="upload__preview" id="preview" alt="Preview of the selected photograph">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="fsec">
+              <div class="fsec__head"><span class="mono">04</span><h2>Your details</h2></div>
+              <div class="fgrid">
+                <div class="field">
+                  <label for="reporterName">Your name <span class="req">*</span></label>
+                  <input class="input" id="reporterName" name="reporterName" type="text" placeholder="Enter your name" autocomplete="name">
+                  <p class="field__err" id="err-name" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="email">University email <span class="req">*</span></label>
+                  <input class="input" id="email" name="email" type="email" placeholder="student@university.edu" autocomplete="email">
+                  <p class="field__err" id="err-email" role="alert"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form__submit">
+              <button class="btn btn--primary" type="submit">Submit report <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              <p class="hint">Reports are saved in this browser and appear on the Browse page straight away.</p>
+            </div>
           </form>
+           <section class="done" id="done" hidden aria-live="polite">
+            <p class="eyebrow">Report submitted</p>
+            <h2 id="done-title" tabindex="-1">Thanks - it's on the board.</h2>
+            <p class="lead">Keep an eye on your university inbox. If someone recognises the item, they'll write to you there.</p>
+            <div id="done-ticket"></div>
+            <div class="done__actions">
+              <a class="btn btn--primary" id="done-view" href="browse.html">View on the board <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <button class="btn" type="button" id="done-again">Report another item</button>
+            </div>
+          </section> <section class="done" id="done" hidden aria-live="polite">
+            <p class="eyebrow">Report submitted</p>
+            <h2 id="done-title" tabindex="-1">Thanks - it's on the board.</h2>
+            <p class="lead">Keep an eye on your university inbox. If someone recognises the item, they'll write to you there.</p>
+            <div id="done-ticket"></div>
+            <div class="done__actions">
+              <a class="btn btn--primary" id="done-view" href="browse.html">View on the board <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <button class="btn" type="button" id="done-again">Report another item</button>
+            </div>
+          </section>
         </div>
       </div>
     </div>
