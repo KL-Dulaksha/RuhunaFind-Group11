@@ -63,6 +63,11 @@
             <span class="visually-hidden">Search items</span>
             <input type="search" id="f-q" placeholder="Search by item, keyword or place..." autocomplete="off">
           </label>
+          <div class="seg" role="group" aria-label="Show">
+            <button type="button" data-status="all" aria-pressed="true">All <span>0</span></button>
+            <button type="button" data-status="lost" aria-pressed="false">Lost <span>0</span></button>
+            <button type="button" data-status="found" aria-pressed="false">Found <span>0</span></button>
+          </div>
         </div>
         <div class="filters__row">
           <div class="field">
@@ -81,6 +86,24 @@
             </select>
           </div>
           <button type="button" class="filters__clear" id="f-clear" hidden>Clear all filters</button>
+        </div>
+      </div>
+    </section>
+    <section class="wrap results">
+      <div class="results__meta">
+        <p id="count" aria-live="polite"></p>
+        <a class="text-link" href="report.html">Can't find it? Report an item <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="ticket-grid" id="grid"></div>
+
+      <div class="empty" id="empty" hidden>
+        <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+        <h2>Nothing matches that yet</h2>
+        <p>Try fewer filters or a different word. If it isn't listed, report it so the next person who looks can find it.</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center">
+          <button type="button" class="btn" id="empty-clear">Clear filters</button>
+          <a class="btn btn--primary" href="report.html">Report an item <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
