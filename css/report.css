@@ -255,3 +255,19 @@
   gap: 0.9rem;
   flex-wrap: wrap;
 }
+.report {
+    grid-template-columns: 1fr;
+  }
+
+  .report__aside {
+    position: static;
+    order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .fgrid,
+  .choices {
+    grid-template-columns: 1fr;
+  }
+}
