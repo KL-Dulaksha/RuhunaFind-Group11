@@ -242,3 +242,56 @@
   max-width: 42rem;
   text-wrap: pretty;
 }
+
+/* 06 - Responsive Breakpoints */
+@media (max-width: 1020px) {
+  .row {
+    grid-template-columns: 4.5rem 1fr;
+  }
+
+  .row p {
+    grid-column: 2;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .rules {
+    grid-template-columns: 1fr;
+  }
+
+  .rule {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-2);
+  }
+
+  .rule:last-child {
+    border-bottom: 0;
+  }
+
+  .alert {
+    grid-template-columns: auto 1fr;
+  }
+
+  .alert .mono {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .row p {
+    grid-column: 1;
+  }
+
+  .faq details > p {
+    padding-right: 0;
+  }
+}
