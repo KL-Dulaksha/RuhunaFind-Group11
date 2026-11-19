@@ -195,3 +195,25 @@
   background: var(--ink);
   color: var(--paper);
 }
+/* 06 - Responsive Breakpoints */
+@media (max-width: 900px) {
+  .detail__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail__media {
+    min-height: 16rem;
+    border-right: 0;
+    border-bottom: 1.5px dashed var(--line-2);
+  }
+}
+
+@media (max-width: 640px) {
+  .detail__facts > div {
+    grid-template-columns: 6.5rem 1fr;
+  }
+
+  .detail__info {
+    padding: 1.25rem;
+  }
+}
