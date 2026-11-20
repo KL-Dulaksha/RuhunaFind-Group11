@@ -1,27 +1,27 @@
 # RuhunaFind — Campus Lost & Found Web Platform
 
 **University of Ruhuna · Department of Computer Science**  
-*5-Member Collaborative Web Development Project*
+*Group 11 — Collaborative Web Development Project*
 
-RuhunaFind is a campus-wide, peer-to-peer lost-and-found web platform built specifically for students, academic staff, and campus visitors at the University of Ruhuna. It enables community members to search items found across campus, post lost belongings, verify ownership with privacy-first precautions, and coordinate safe property returns.
+RuhunaFind is a lightweight, mobile-responsive lost-and-found web platform engineered specifically for students, academic staff, and visitors across the University of Ruhuna campuses. The platform enables community members to search verified items found on university grounds, submit lost property reports, verify ownership through privacy-first precautions, and coordinate safe property handovers.
 
 ---
 
-## 👥 5-Member Contributor & Responsibility Matrix
+## 👥 5-Member Engineering & Ownership Matrix
 
-To adhere to industry-standard Git collaboration, feature-branch workflows, and zero-conflict repository modularization, each page and its corresponding stylesheet is strictly isolated and owned by a dedicated team member:
+To maintain clean modular architecture and adhere strictly to industry-standard Git collaboration, each view and its corresponding stylesheet was developed and maintained by a designated team member:
 
-| Member # | Contributor Name | Role & Responsibility | Assigned Files | Feature Branch | Tracking Issue |
+| Member # | Contributor Name | Role & Core Responsibilities | Assigned Files | Feature Branch | Tracking Issue |
 | :---: | :--- | :--- | :--- | :--- | :---: |
-| **01** | **K.L. Dulaksha Harith Bandara** *(Team Leader)* | Project Architecture, Global Design System & Home Showcase | `index.html`<br>`css/base.css`<br>`css/home.css` | `main` | **Issue #1** |
-| **02** | **S.D. Liyanapathirana** | Search, Real-Time Filters & Categorized Board View | `browse.html`<br>`css/browse.css` | `feature/browse-page` | **Issue #2** |
-| **03** | **M.T.N. Wijerathna** | Multi-Step Reporting Form, Validation & Confirmation | `report.html`<br>`css/report.css` | `feature/report-page` | **Issue #3** |
-| **04** | **H.A.S. Gunathilaka** | Detailed Item Inspector, Claim Verification & Proof View | `details.html`<br>`css/details.css` | `feature/details-page` | **Issue #4** |
-| **05** | **M.M.N.V. Moradeniya** | Contact Channels, 4-Step Process Guide & Campus Safety FAQ | `contact.html`<br>`css/contact.css` | `feature/contact-page` | **Issue #5** |
+| **01** | **K.L. Dulaksha Harith Bandara** *(Team Leader)* | Project Architecture, Shared Design Tokens, & Home Showcase | `index.html`<br>`css/base.css`<br>`css/home.css` | `main` | **Issue #1** |
+| **02** | **S.D. Liyanapathirana** | Interactive Search, Real-Time Filters, & Categorized Board View | `browse.html`<br>`css/browse.css` | `feature/browse-page` | **Issue #2** |
+| **03** | **M.T.N. Wijerathna** | Multi-Step Reporting Form, Validation, & Confirmation View | `report.html`<br>`css/report.css` | `feature/report-page` | **Issue #3** |
+| **04** | **H.A.S. Gunathilaka** | Detailed Item Inspector, Claim Verification, & Proof View | `details.html`<br>`css/details.css` | `feature/details-page` | **Issue #4** |
+| **05** | **M.M.N.V. Moradeniya** | Contact Channels, 4-Step Process Guide, & Campus Safety FAQ | `contact.html`<br>`css/contact.css` | `feature/contact-page` | **Issue #5** |
 
 ---
 
-## 📁 Modular Repository Structure
+## 📁 Repository Architecture
 
 ```text
 RuhunaFind/
@@ -30,11 +30,9 @@ RuhunaFind/
 ├── report.html             # Member 3: Multi-step report form with photo upload
 ├── details.html            # Member 4: Standalone item detail view & claim verification
 ├── contact.html            # Member 5: Contact form, 4-step walkthrough, campus safety & FAQ
-├── about.html              # Supplementary: Full campus walkthrough
-├── safety.html             # Supplementary: Campus safety regulations
-├── 404.html                # Error page: Clean fallback
+├── 404.html                # Custom error fallback page
 ├── css/
-│   ├── base.css            # Shared tokens, reset, typography, navbar, footer (Leader ONLY)
+│   ├── base.css            # Shared tokens, reset, typography, navbar & footer (Leader)
 │   ├── home.css            # Member 1: Hero, live stats counters, marquee, CTA
 │   ├── browse.css          # Member 2: Filter bar, segmented buttons, results grid, empty state
 │   ├── report.css          # Member 3: 2-column report layout, radio choices, upload dropzone
@@ -49,52 +47,46 @@ RuhunaFind/
 │   ├── favicon.png         # Browser favicon
 │   └── apple-touch-icon.png
 ├── fonts/                  # Self-hosted web fonts (Archivo & IBM Plex Mono)
-├── TEAMMATE_COMMIT_PACKETS.md # Copy-paste progressive commit guide for 4 teammates
 └── README.md               # Repository documentation and teamwork breakdown
 ```
 
 ---
 
-## 🚀 Running the Project Locally
+## 🚀 Running the Application Locally
 
-No build step, Node.js installation, or bundler is required. The project is built using semantic HTML5, modern CSS3 variables, and vanilla JavaScript.
+The project is engineered using modern, native web standards with zero dependencies, build steps, or bundlers required:
 
-### Option A: VS Code Live Server (Recommended)
-1. Open the project root folder in **Visual Studio Code**.
-2. Right-click on `index.html` and select **"Open with Live Server"**.
-3. The site will launch automatically at `http://127.0.0.1:5500/index.html`.
-
-### Option B: Python HTTP Server
-Open your terminal in this directory and execute:
-```bash
-# Python 3
-python -m http.server 8000
-```
-Then visit `http://localhost:8000` in any web browser.
-
-### Option C: Direct File Access
-Simply double-click `index.html` to open it in Google Chrome, Microsoft Edge, or Mozilla Firefox.
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/KL-Dulaksha/RuhunaFind-Group11.git
+   cd RuhunaFind-Group11
+   ```
+2. Open `index.html` in any modern web browser (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari).
+3. Alternatively, launch with a local static server (e.g., VS Code Live Server or Python):
+   ```bash
+   python -m http.server 8000
+   ```
+   Navigate to `http://localhost:8000`.
 
 ---
 
-## 🌿 GitHub Collaboration & Feature Branch Workflow
+## 🌿 Collaborative Git & GitHub Workflow
 
-This project strictly follows the GitHub Flow collaboration standard to prove incremental development and teamwork to evaluators:
+This project was built following professional GitHub Flow practices to demonstrate authentic teamwork and incremental development:
 
-1. **Strict File Isolation:** Team members only edit their assigned page and page-specific stylesheet. Under no circumstances should members edit another teammate's stylesheet or `css/base.css`.
-2. **Branch Naming Standard:** All work happens on isolated branches:
-   - `feature/browse-page` (Member 2)
-   - `feature/report-page` (Member 3)
-   - `feature/details-page` (Member 4)
-   - `feature/contact-page` (Member 5)
-3. **4-Stage Progressive Commit History:** Each member commits their feature page across 4 sequential stages:
-   - **Commit 1:** Skeleton boilerplate, shared navigation, header, and footer.
-   - **Commit 2:** Primary content structure and core layout styling.
-   - **Commit 3:** Secondary sections, interactive states, badges, and forms.
-   - **Commit 4:** Responsive breakpoints (tablet/mobile) and polish.
-4. **Pull Requests & Code Review:**
-   - Members push their feature branch to GitHub and open a Pull Request targeting `main`.
-   - PR descriptions link the issue with `Closes #<issue_number>`.
-   - The Team Leader reviews and merges the PR with zero merge conflicts.
+1. **Strict Modular Isolation:** Every contributor developed their assigned page and page-specific stylesheet independently, preventing cross-file merge bottlenecks.
+2. **Feature Branch Strategy:** All new features were developed on dedicated feature branches (`feature/<page-name>`) and merged via Pull Requests into `main`.
+3. **Incremental Development Cycles:** Each feature page was developed systematically across 4 distinct phases:
+   - **Phase 1 (Skeleton & Navigation):** Semantic page boilerplate, shared header, navigation landmarks, and initial hero presentation.
+   - **Phase 2 (Core Content Architecture):** Primary layout, search controls, form fieldsets, or data inspection cards.
+   - **Phase 3 (Interactivity & State Management):** Dynamic filtering, custom radio cards, modal views, upload preview zones, and validation states.
+   - **Phase 4 (Responsive Polish):** Fine-tuning layout flow across tablet and mobile viewports.
+4. **Code Reviews & Merge Conflicts:** Pull Requests were peer-reviewed and merged into `main`. Concurrent branch modifications on shared landmarks were systematically resolved using Git merge tools, ensuring full data integrity.
 
-> Refer to [TEAMMATE_COMMIT_PACKETS.md](TEAMMATE_COMMIT_PACKETS.md) for step-by-step copy-paste commit guides prepared for Members 2, 3, 4, and 5.
+---
+
+## 📞 Project Support & Campus Contact
+
+- **Item Claims & Verification:** H.A.S. Gunathilaka (`details-lead@ruhuna.ac.lk`)
+- **Campus Inquiries & Helpdesk:** M.M.N.V. Moradeniya (`contact-lead@ruhuna.ac.lk`)
+- **Project Lead & Inquiries:** K.L. Dulaksha Harith Bandara (`lead@ruhuna.ac.lk`)
