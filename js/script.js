@@ -253,7 +253,7 @@
 
   function ticketHTML(item, opts = {}) {
     const cat = CAT[item.category] || CAT.other;
-    const href = `browse.html#${encodeURIComponent(item.ref)}`;
+    const href = `details.html?ref=${encodeURIComponent(item.ref)}`;
     return `
       <article class="ticket" data-ref="${esc(item.ref)}">
         <div class="ticket__media">${mediaHTML(item)}${tag(item.status)}</div>
@@ -278,7 +278,7 @@
         <div class="ticket__perf" aria-hidden="true"></div>
         <div class="ticket__body">
           <div class="ticket__top mono caps"><span>${esc(cat.label)}</span><span>${fmtDate(item.date)}</span></div>
-          <h3 class="ticket__title">${link ? `<a href="browse.html#${encodeURIComponent(item.ref)}" style="text-decoration:none">${esc(item.title)}</a>` : esc(item.title)}</h3>
+          <h3 class="ticket__title">${link ? `<a href="details.html?ref=${encodeURIComponent(item.ref)}" style="text-decoration:none">${esc(item.title)}</a>` : esc(item.title)}</h3>
           <ul class="ticket__facts"><li>${ic('pin')}${esc(item.location)}</li></ul>
         </div>
         <div class="ticket__perf" aria-hidden="true"></div>
@@ -416,67 +416,7 @@
     els.clear.addEventListener('click', reset);
     $('#empty-clear')?.addEventListener('click', reset);
 
-    /* Details dialog */
-    let dialog;
-    function openDetail(ref) {
-      const item = allItems().find((i) => i.ref === ref);
-      if (!item) return;
-      const cat = CAT[item.category] || CAT.other;
-      const email = item.email || TEAM_EMAIL;
-      const subject = encodeURIComponent(`RuhunaFind ${item.ref}: ${item.title}`);
-      const isFound = item.status === 'found';
-      if (!dialog) {
-        dialog = document.createElement('dialog');
-        dialog.className = 'detail';
-        dialog.setAttribute('aria-labelledby', 'detail-title');
-        document.body.appendChild(dialog);
-        dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
-        dialog.addEventListener('close', () => {
-          history.replaceState(null, '', location.pathname + location.search);
-          lastTrigger?.focus?.();
-        });
-      }
-      dialog.innerHTML = `
-        <div class="detail__grid">
-          <div class="detail__media">${mediaHTML(item)}</div>
-          <div class="detail__info">
-            <button class="detail__close" type="button" aria-label="Close details">${ic('x')}</button>
-            <div class="detail__top mono caps">${tag(item.status)}<span>${esc(item.ref)}</span></div>
-            <h2 id="detail-title">${esc(item.title)}</h2>
-            <p class="detail__desc">${esc(item.desc || 'No description was provided.')}</p>
-            <dl class="detail__facts">
-              <div><dt>Category</dt><dd>${esc(cat.label)}</dd></div>
-              <div><dt>${isFound ? 'Found at' : 'Lost at'}</dt><dd>${esc(item.location)}</dd></div>
-              <div><dt>${isFound ? 'Found on' : 'Lost on'}</dt><dd>${fmtDate(item.date)}</dd></div>
-              <div><dt>Reported by</dt><dd>${esc(item.reporter || 'Anonymous')}</dd></div>
-            </dl>
-            <div class="detail__cta">
-              <p>${isFound ? 'Think this is yours?' : 'Seen this item?'}</p>
-              <a class="btn btn--primary" href="mailto:${esc(email)}?subject=${subject}">${ic('mail')} Email the reporter</a>
-            </div>
-            <p class="detail__note">${ic('shield')}<span>${isFound ? 'Describe something that isn’t visible in the listing, then' : 'Let them know where you saw it, then'} meet somewhere busy on campus, such as the library foyer.</span></p>
-          </div>
-        </div>`;
-      $('.detail__close', dialog).addEventListener('click', () => dialog.close());
-      if (!dialog.open) dialog.showModal();
-      history.replaceState(null, '', `${location.pathname}${location.search}#${encodeURIComponent(ref)}`);
-    }
-
-    let lastTrigger = null;
-    els.grid.addEventListener('click', (e) => {
-      const a = e.target.closest('[data-open]');
-      if (!a) return;
-      e.preventDefault();
-      lastTrigger = a;
-      openDetail(a.dataset.open);
-    });
-
     render();
-    if (location.hash.length > 1) openDetail(decodeURIComponent(location.hash.slice(1)));
-    // Links like browse.html#RF-0244 followed while already on this page
-    window.addEventListener('hashchange', () => {
-      if (location.hash.length > 1) openDetail(decodeURIComponent(location.hash.slice(1)));
-    });
   }
 
   /* 7 — Report form ------------------------------------------------------- */
@@ -578,7 +518,7 @@
       $('#report-intro').hidden = true;
       done.hidden = false;
       $('#done-ticket').innerHTML = largeTicketHTML(item, { link: false });
-      $('#done-view').href = `browse.html#${encodeURIComponent(item.ref)}`;
+      $('#done-view').href = `details.html?ref=${encodeURIComponent(item.ref)}`;
       $('#done-title').focus();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
