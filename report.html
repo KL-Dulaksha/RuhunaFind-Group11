@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report an item - RuhunaFind</title>
+  <meta name="description" content="Report a lost or found item on the University of Ruhuna campus.">
+  <meta name="theme-color" content="#f5f2ea">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RuhunaFind">
+  <meta property="og:title" content="Report an item - RuhunaFind">
+  <meta property="og:description" content="Report a lost or found item on the University of Ruhuna campus.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/report.css">
+</head>
+<body data-page="report">
+
+  <header class="site-header" data-nav="report">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="wrap nav">
+      <a class="nav__logo" href="index.html" aria-label="RuhunaFind home">
+        <img src="images/logo.png" alt="RuhunaFind" width="141" height="34">
+      </a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="nav-menu" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="browse.html">Browse items</a></li>
+          <li><a href="report.html" aria-current="page">Report item</a></li>
+          <li><a href="contact.html">Contact &amp; Guide</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="report.html">
+          <svg class="i" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg> Report an item
+        </a>
+      </nav>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <section class="page-head" id="report-intro">
+      <div class="wrap">
+        <p class="crumbs mono caps"><a href="index.html">Home</a><span>/</span><span>Report an item</span></p>
+        <h1>Report an item</h1>
+        <p class="lead">Fill in the details below to post a lost or found item to the board.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="report">
+        <aside class="report__aside" aria-label="Tips for a good report">
+          <h2>A good report gets the item home</h2>
+          <ol class="tips" role="list">
+            <li><div><strong>Say what makes it yours</strong>Colour, brand, stickers, scratches, what's inside.</div></li>
+            <li><div><strong>Be exact about the place</strong>Pick the closest location and mention the room or bench.</div></li>
+            <li><div><strong>Add a photo if you have one</strong>Listings with a picture are easier to recognise.</div></li>
+          </ol>
+          <p class="aside-note">Never put PINs, passwords, card numbers or ID numbers in a public description. Keep one detail back so the real owner can prove it's theirs.</p>
+        </aside>
+
+        <div>
+          <form class="form" id="report-form" novalidate>
+             <fieldset class="fsec">
+              <div class="fsec__head"><span class="mono">01</span><h2>What would you like to report?</h2></div>
+              <div class="choices" role="radiogroup">
+                <label class="choice">
+                  <input type="radio" name="type" value="lost">
+                  <span class="choice__body"><strong>Lost item</strong><span>I've misplaced something.</span></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="type" value="found">
+                  <span class="choice__body"><strong>Found item</strong><span>I found something on campus.</span></span>
+                </label>
+              </div>
+              <p class="field__err" id="err-type" role="alert"></p>
+            </fieldset>
+
+            <fieldset class="fsec">
+              <div class="fsec__head"><span class="mono">02</span><h2>The item</h2></div>
+              <div class="fgrid">
+                <div class="field span-2">
+                  <label for="title">Item name <span class="req">*</span></label>
+                  <input class="input" id="title" name="title" type="text" placeholder="e.g. Blue Hydro Flask water bottle" maxlength="80" autocomplete="off">
+                  <p class="field__err" id="err-title" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="category">Category <span class="req">*</span></label>
+                  <select class="select" id="category" name="category"></select>
+                  <p class="field__err" id="err-category" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="date">Date lost or found <span class="req">*</span></label>
+                  <input class="input" id="date" name="date" type="date">
+                  <p class="field__err" id="err-date" role="alert"></p>
+                </div>
+                <div class="field span-2">
+                  <label for="location">Campus location <span class="req">*</span></label>
+                  <select class="select" id="location" name="location"></select>
+                  <p class="field__err" id="err-location" role="alert"></p>
+                </div>
+              </div>
+            </fieldset>
+              <fieldset class="fsec">
+              <div class="fsec__head"><span class="mono">03</span><h2>Details</h2></div>
+              <div class="field">
+                <label for="desc">Description <span class="req">*</span></label>
+                <textarea class="textarea" id="desc" name="desc" placeholder="Describe the colour, brand, stickers, scratches or other distinguishing features..." maxlength="600"></textarea>
+                <p class="field__err" id="err-desc" role="alert"></p>
+              </div>
+              <div class="field">
+                <span class="label">Photograph <span class="hint">(optional)</span></span>
+                <div class="upload" id="upload">
+                  <input type="file" id="photo" name="photo" accept="image/*" aria-label="Upload a photograph of the item">
+                  <strong><svg class="i" aria-hidden="true"><use href="#i-upload"/></svg> Choose a photo</strong>
+                  <span class="hint" id="upload-name">JPG or PNG. It's resized automatically.</span>
+                  <img class="upload__preview" id="preview" alt="Preview of the selected photograph">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="fsec">
+              <div class="fsec__head"><span class="mono">04</span><h2>Your details</h2></div>
+              <div class="fgrid">
+                <div class="field">
+                  <label for="reporterName">Your name <span class="req">*</span></label>
+                  <input class="input" id="reporterName" name="reporterName" type="text" placeholder="Enter your name" autocomplete="name">
+                  <p class="field__err" id="err-name" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="email">University email <span class="req">*</span></label>
+                  <input class="input" id="email" name="email" type="email" placeholder="student@university.edu" autocomplete="email">
+                  <p class="field__err" id="err-email" role="alert"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form__submit">
+              <button class="btn btn--primary" type="submit">Submit report <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              <p class="hint">Reports are saved in this browser and appear on the Browse page straight away.</p>
+            </div>
+          </form>
+           <section class="done" id="done" hidden aria-live="polite">
+            <p class="eyebrow">Report submitted</p>
+            <h2 id="done-title" tabindex="-1">Thanks - it's on the board.</h2>
+            <p class="lead">Keep an eye on your university inbox. If someone recognises the item, they'll write to you there.</p>
+            <div id="done-ticket"></div>
+            <div class="done__actions">
+              <a class="btn btn--primary" id="done-view" href="browse.html">View on the board <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <button class="btn" type="button" id="done-again">Report another item</button>
+            </div>
+          </section> <section class="done" id="done" hidden aria-live="polite">
+            <p class="eyebrow">Report submitted</p>
+            <h2 id="done-title" tabindex="-1">Thanks - it's on the board.</h2>
+            <p class="lead">Keep an eye on your university inbox. If someone recognises the item, they'll write to you there.</p>
+            <div id="done-ticket"></div>
+            <div class="done__actions">
+              <a class="btn btn--primary" id="done-view" href="browse.html">View on the board <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <button class="btn" type="button" id="done-again">Report another item</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="images/logo-white.png" alt="RuhunaFind" width="146" height="36">
+          <p>A lost-and-found board for the University of Ruhuna. Built by five Computer Science students as a group project.</p>
+        </div>
+        <div class="footer__col">
+          <h2>Navigate</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse items</a></li>
+            <li><a href="report.html">Report an item</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2>Help &amp; Guide</h2>
+          <ul>
+            <li><a href="contact.html#guide">How it works</a></li>
+            <li><a href="contact.html#rules">Safety rules</a></li>
+            <li><a href="contact.html#faq">FAQs</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__mark" aria-hidden="true">RuhunaFind</div>
+      <div class="footer__bottom mono">
+        <span>&copy; 2026 RuhunaFind</span>
+        <span>University of Ruhuna student project</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

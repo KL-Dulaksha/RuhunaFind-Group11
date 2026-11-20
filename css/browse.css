@@ -1,0 +1,189 @@
+/* ==========================================================================
+   RuhunaFind - Browse Page Stylesheet (css/browse.css)
+   Owned by: Member 2 (S.D. Liyanapathirana)
+   Scope: Search filters, segmented status toggle, results bar, empty state.
+   ========================================================================== */
+
+/* 01 - Results Container */
+.results {
+  padding-block: 2rem clamp(3.5rem, 7vw, 6rem);
+}
+/* 02 - Filter Bar Container */
+.filters {
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+}
+
+.filters__row {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  padding: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filters__row + .filters__row {
+  border-top: 1px solid var(--line);
+  align-items: flex-end;
+  background: #fbfaf6;
+  border-radius: 0 0 3px 3px;
+  padding: 0.85rem 0.75rem;
+}
+
+.filters .search-box {
+  flex: 1 1 18rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-inline: 0.9rem;
+  border-radius: 3px;
+  background: var(--paper);
+  min-height: 3rem;
+}
+
+.filters .search-box:focus-within {
+  box-shadow: 0 0 0 2px var(--orange);
+}
+
+.search-box .i {
+  color: var(--ink-3);
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  outline: none;
+  padding-block: 0.7rem;
+}
+
+.search-box input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.filters .field {
+  flex: 1 1 11rem;
+  max-width: 16rem;
+}
+
+.filters__clear {
+  margin-left: auto;
+  background: none;
+  border: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  padding: 0.7rem 0.25rem;
+}
+
+.filters__clear:hover {
+  color: var(--orange-deep);
+}
+/* 03 - Segmented Status Toggle (All / Lost / Found) */
+.seg {
+  display: inline-flex;
+  padding: 3px;
+  background: var(--paper);
+  border-radius: 3px;
+  gap: 2px;
+}
+
+.seg button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 0;
+  background: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 2px;
+  color: var(--ink-2);
+}
+
+.seg button span {
+  font-family: var(--f-mono);
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--ink-3);
+}
+
+.seg button:hover {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+
+.seg button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.seg button[aria-pressed="true"] span {
+  color: var(--line-2);
+}
+
+/* 04 - Results Section & Meta */
+.results__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--ink-2);
+  flex-wrap: wrap;
+}
+
+.results__meta strong {
+  color: var(--ink);
+}
+
+/* 05 - Empty State */
+.empty {
+  border: 1.5px dashed var(--line-2);
+  border-radius: var(--radius);
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+}
+
+.empty h2 {
+  font-size: 1.75rem;
+}
+
+.empty p {
+  color: var(--ink-2);
+  max-width: 28rem;
+}
+
+.empty .i {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--ink-3);
+  stroke-width: 1.4;
+}
+/* 06 - Responsive Breakpoints */
+@media (max-width: 640px) {
+  .filters .field {
+    max-width: none;
+    flex: 1 1 100%;
+  }
+
+  .filters__clear {
+    margin-left: 0;
+  }
+
+  .seg {
+    width: 100%;
+  }
+
+  .seg button {
+    flex: 1;
+    justify-content: center;
+    padding-inline: 0.5rem;
+  }
+}
